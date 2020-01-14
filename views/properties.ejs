@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/resources/style">
+</head>
+<body>
+    <div class="spacer"></div>
+    <div class="head-bar">
+        <h1><%= user.fullName %></h1>
+        <h3>Here are your properties</h3>
+    </div>
+    <div class="authoriser">
+        <a href="/"><button>Home</button></a>
+        <a href="/properties"><button>Properties</button></a>
+        <a href="/login" id="login"><button>Login</button></a>
+        <a href="/register" id="register"><button>Register</button></a>
+        <a href="/login/logout"><button id="logout">Log out</button></a><!--
+        <button id="logout" onclick="logout()">Log out</button>-->
+    </div>
+    <div class="nini-center2">
+        <form action="/properties/add" method="POST">
+            <input type="text" required name="name" placeholder="enter prperty name">
+
+            <input type="text" hidden required name="owner" placeholder="enter owner" value="<%= user.fullName %>">
+
+            <input type="text" required name="price" placeholder="enter price">
+            <input type="text" required name="code" placeholder="enter code">
+            <input type="submit" value="Submit property">
+        </form>
+        <p style="color:#ec3c3c"><%= failure.msg %></p>
+        <p style="color:#00d300"><%= success %></p>
+    </div><!--
+    <div class="nini-center">
+            <input type="text" required name="username" id="username"><br>
+            <input type="text" required name="account" id="account"><br>
+            <input type="password" required name="password" id="password"><br>
+            <button onclick="newProperty()">Submit</button>
+    </div>
+    <div class="nini">
+        <button>Clicker</button>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+            </p>
+        </div>
+    </div>-->
+    <% if(activeList.length == 0){ %>
+        <div class="nini">
+            <button>Info</button>
+            <div>
+                <p>
+                    You have no products yet, please save some to populate this area
+                </p>
+            </div>
+        </div>
+    <%} %>
+    <% activeList.forEach((product)=>{%>
+        <div class="nini">
+            <button>View <%= product.name %></button>
+            <a href="/properties/delete/<%= product._id %>" class="distructive">Delete</a>
+            <div>
+                <p>
+                    <%= product.name %> &nbsp; &nbsp; &nbsp; belongs to <%= product.owner %> <br/>
+                    The price is 
+                    <%= product.price %> &nbsp; &nbsp; &nbsp; and code is  <%= product.code %> 
+                </p>
+            </div>
+        </div>
+    <%}) %>
+    <div id="crone"></div>
+    <div class="bt-link">
+        <a href="/about"><button>Go to About</button></a>
+    </div>
+    <script src="/resources/script"></script>
+    <script>
+        
+        function newProperty(){
+            const username = document.getElementById('username');
+            const account = document.getElementById('account');
+            const password = document.getElementById('password');
+            fetch('/addguy',{
+                method:"POST",
+                body:JSON.stringify({
+                    username:username.value,
+                    account:account.value,
+                    password:password.value
+                }),
+                headers:{
+                    "Content-type":"application/json",
+                }
+            })
+            .then(res => res.json())
+            .then(res => {
+                location.reload
+            })
+        }
+
+        let pm = new Promise((resolve, reject)=>{
+            let x = 2
+            resolve(setTimeout(()=>{
+                x = 5;
+            },3000))
+            console.log( x)
+        })
+        
+        pm.then(y => console.log(y))
+
+    </script>
+</body>
+</html>
