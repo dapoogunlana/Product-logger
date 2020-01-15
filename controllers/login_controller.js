@@ -82,7 +82,7 @@ router.post('/2', (req, res)=>{
 })
 router.get('/logout', (req, res)=>{
     console.log('sorting')
-    res.clearCookie('token').redirect('/register')
+    res.clearCookie('token').redirect('/login')
 })
 
 module.exports = router
