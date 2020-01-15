@@ -6,12 +6,17 @@ const express = require('express');
 const router = express.Router();
 const path = require('path')
 
-router.get('/style', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../views/css/style.css'))
+//Styles
+router.get('/style/:name', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../views/css/', req.params.name))
 })
-router.get('/script', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../views/frontend_js/logic.js'))
+
+//Scripts
+router.get('/script/:name', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../views/frontend_js/', req.params.name))
 })
+
+//Files
 router.get('/img/:name', (req, res)=>{
     res.sendFile(path.join(__dirname, '../views/images/', req.params.name))
 })

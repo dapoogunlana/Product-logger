@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/resources/style">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/resources/style/style.css">
 </head>
 <body>
     <div class="spacer"></div>
@@ -24,7 +25,7 @@
         <form action="/register" method="POST">
             <input type="text" required name="fullname" placeholder="enter your name" value="<%= user.fullname %>">
             <input type="email" required name="email" placeholder="enter email" value="<%= user.email %>"><br>
-            <input type="text" required name="mobile" placeholder="enter mobile bumber" value="<%= user.mobile %>">
+            <input type="text" required name="mobile" placeholder="enter mobile number" value="<%= user.mobile %>">
             <input type="text" required name="city" placeholder="enter city" value="<%= user.city %>"><br>
             <input type="password" required name="password" placeholder="enter password" value="<%= user.password %>">
             <input type="submit" value="Register">
@@ -38,7 +39,7 @@
             <a href="/login" id="login"><button>Login</button></a>
     </div>
     <% } %>
-    <script src="/resources/script"></script>
+    <script src="/resources/script/logic.js"></script>
     <script>
         function newGuy(){
             const username = document.getElementById('fullname');
