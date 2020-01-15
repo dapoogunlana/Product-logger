@@ -14,6 +14,9 @@
     border-radius: 5px;
     box-shadow: 0 5px 10px 2px rgba(5, 5, 5, 0.3)
 }
+.nini span{
+  font-weight: 700;
+}
 .nini div{
     width:calc(100% - 10px);
     margin-top: 10px;

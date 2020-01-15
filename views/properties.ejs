@@ -59,7 +59,8 @@
     <%} %>
     <% activeList.forEach((product)=>{%>
         <div class="nini">
-            <button>View <%= product.name %></button>
+            <span> <%= product.name %> </span>&nbsp; &nbsp;
+            <button>View</button>
             <a href="/properties/delete/<%= product._id %>" class="distructive">Delete</a>
             <div>
                 <p>
