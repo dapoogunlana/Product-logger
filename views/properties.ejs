@@ -21,19 +21,19 @@
         <a href="/login/logout"><button id="logout">Log out</button></a><!--
         <button id="logout" onclick="logout()">Log out</button>-->
     </div>
-    <div class="nini-center2">
+    <div class="nini-center-r">
         <form action="/properties/add" method="POST">
-            <input type="text" required name="name" placeholder="enter prperty name">
+            <input type="text" required name="name" placeholder="enter property name">
 
             <input type="text" hidden required name="owner" placeholder="enter owner" value="<%= user.fullName %>">
 
             <input type="text" required name="price" placeholder="enter price">
-            <input type="text" required name="code" placeholder="enter code">
+            <input type="text" hidden name="code" placeholder="enter code">
             <input type="submit" value="Submit property">
         </form>
         <p style="color:#ec3c3c"><%= failure.msg %></p>
         <p style="color:#00d300"><%= success %></p>
-    </div><!--
+    </div><br><!--
     <div class="nini-center">
             <input type="text" required name="username" id="username"><br>
             <input type="text" required name="account" id="account"><br>
@@ -49,13 +49,11 @@
         </div>
     </div>-->
     <% if(activeList.length == 0){ %>
-        <div class="nini">
-            <button>Info</button>
-            <div>
-                <p>
-                    You have no products yet, please save some to populate this area
-                </p>
-            </div>
+        <div class="center-plain">
+            <img src="/resources/img/46021.jpg" alt="" width="120">
+            <p>
+                You have no products yet, please save some to populate this area
+            </p>
         </div>
     <%} %>
     <% activeList.forEach((product)=>{%>
@@ -73,7 +71,7 @@
     <%}) %>
     <div id="crone"></div>
     <div class="bt-link">
-        <a href="/about"><button>Go to About</button></a>
+        <!--<a href="/about"><button>Go to About</button></a>-->
     </div>
     <script src="/resources/script"></script>
     <script>

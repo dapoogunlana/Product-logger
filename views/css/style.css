@@ -30,6 +30,32 @@
     border-radius: 5px;
     box-shadow: 0 5px 10px 2px rgba(5, 5, 5, 0.3)
 }
+.nini-center-r{
+    text-align: center;
+    width:80%;
+    max-width:500px;
+    margin:10px auto;
+    padding:15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 2px rgba(5, 5, 5, 0.3)
+}
+.nini-center-r input[type="submit"]{
+    width:192px;
+    border:none;
+    color:#ffffff;
+    background-color: #3c3ce0;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 5px 1px rgba(20, 46, 70, 0.3);
+}
+.nini-center-r input[type="submit"]:hover{
+    background-color: #0000af;
+}
+.nini-center-r input[type="submit"]:active{
+    background-color: #000025;
+}
+.nini-center-r input[type="submit"]:focus{
+    outline: none;
+}
 .nini-center2{
     max-width:540px;
     width:90%;
@@ -92,4 +118,13 @@ input{
 }
 .distructive:active{
     color: #410000;
+}
+
+.center-plain{
+    text-align: center;
+    width: 90%;
+    margin:auto;
+}
+.spp{
+    margin:5vh auto;
 }

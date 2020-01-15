@@ -12,5 +12,8 @@ router.get('/style', (req, res)=>{
 router.get('/script', (req, res)=>{
     res.sendFile(path.join(__dirname, '../views/frontend_js/logic.js'))
 })
+router.get('/img/:name', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../views/images/', req.params.name))
+})
 
 module.exports = router

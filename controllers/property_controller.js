@@ -47,7 +47,7 @@ router.post('/add', (req, res)=>{
     propertyCollection.name = req.body.name;
     propertyCollection.owner = req.body.owner;
     propertyCollection.price = req.body.price;
-    propertyCollection.code = req.body.code;
+    propertyCollection.code = new Date().getTime().toString();
     propertyCollection.save((err)=>{
         if(!err){
             console.log('saved')
@@ -57,7 +57,7 @@ router.post('/add', (req, res)=>{
         }else{
             let errorContent = {};
             if(err.name == 'ValidationError'){
-                errorContent.msg = 'That code already exists in our record'
+                errorContent.msg = 'The item could not be added'
                 console.log(errorContent)
                 for( let values in err.errors){
                     switch(err.errors[values].path){

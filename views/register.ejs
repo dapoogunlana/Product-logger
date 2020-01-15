@@ -11,7 +11,7 @@
     <div class="spacer"></div>
     <div class="head-bar">
         <h1>Register now </h1>
-        <h3>We are using express EJS</h3>
+        <h3>Create an account to get started</h3>
     </div>
     <div class="authoriser">
         <a href="/"><button>Home</button></a>
@@ -20,67 +20,24 @@
         <a href="/register" id="register"><button>Register</button></a>
         <button id="logout" onclick="logout()">Log out</button>
     </div>
-    <div class="nini">
-        <button>Clicker</button>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-            </p>
-                
-        </div>
-    </div>
-    <div class="nini-center">
+    <div class="nini-center-r">
         <form action="/register" method="POST">
             <input type="text" required name="fullname" placeholder="enter your name" value="<%= user.fullname %>">
-            <input type="email" required name="email" placeholder="enter email" value="<%= user.email %>">
+            <input type="email" required name="email" placeholder="enter email" value="<%= user.email %>"><br>
             <input type="text" required name="mobile" placeholder="enter mobile bumber" value="<%= user.mobile %>">
-            <input type="text" required name="city" placeholder="enter city" value="<%= user.city %>">
+            <input type="text" required name="city" placeholder="enter city" value="<%= user.city %>"><br>
             <input type="password" required name="password" placeholder="enter password" value="<%= user.password %>">
-            <input type="submit" value="Submiteee">
+            <input type="submit" value="Register">
         </form>
         <p style="color:#ec3c3c"><%= failure %></p>
         <p style="color:#00d300"><%= success %></p>
     </div>
-    <div class="nini-center">
-            <input type="text" required name="username" id="username"><br>
-            <input type="text" required name="account" id="account"><br>
-            <input type="password" required name="password" id="password"><br>
-            <button onclick="newGuy()">Submit</button>
+    <% if (registered == true) { %>
+    <div class="center-plain spp">
+            <h4>You can now proceed to log in</h4>
+            <a href="/login" id="login"><button>Login</button></a>
     </div>
-    <div class="nini">
-        <button>Clicker</button>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-            </p>
-        </div>
-    </div>
-    <div class="nini">
-        <button>Clicker</button>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-            </p>
-        </div>
-    </div>
-    <div class="nini">
-        <button>Clicker</button>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-            </p>
-            <ul>
-                <% activeList.map((active)=>{ %>
-                    <li>An <%= active.name %> has power level of <%= active.power %></li>
-                <% }) %>
-            </ul>
-            <br>
-            
-            <% imUrl.forEach((url)=>{ %>
-                <img src="<%= url %>" class="sp-img" width="120" alt="">
-            <% }) %>
-        </div>
-    </div>
+    <% } %>
     <script src="/resources/script"></script>
     <script>
         function newGuy(){
