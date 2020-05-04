@@ -4,6 +4,7 @@ const propertyModel = mongoose.model('property')
 const userModel = mongoose.model('user')
 const express = require('express');
 const router = express.Router();//
+const mailClient = require('./mailer');
 
 
 let productList = [];
@@ -62,6 +63,18 @@ router.post('/2', (req, res)=>{
         if(!err){
             productList = doc;
             console.log(doc)
+                console.log('mailing')
+                mailClient()
+                .then(
+                    res =>{
+                        console.log(res)
+                    }
+                )
+                .catch(
+                    err =>{
+                        console.log(err)
+                    }
+                )
             
             if(doc){
                 res.cookie('token', doc.token).redirect('/properties')

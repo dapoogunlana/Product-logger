@@ -4,6 +4,7 @@ const propertyModel = mongoose.model('property');
 const userModel = mongoose.model('user');
 const express = require('express');
 const router = express.Router();
+const url = require('url');
 
 
 let productList = [];
@@ -20,9 +21,11 @@ router.get('/', (req, res)=>{
                 }
                 propertyModel.find({"owner":doc.fullName}, (errors, data)=>{
                     if(!errors){
+                        console.log(url.parse(req.url))
                         res.render('properties.ejs',{
                             activeList:data, 
                             imUrl:[], 
+                            requestParam:req.query.fullname,
                             user:doc, 
                             success:'',
                             failure:''

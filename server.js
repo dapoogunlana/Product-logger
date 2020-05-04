@@ -5,6 +5,8 @@ const cors = require('cors');
 const port = process.env.PORT || 3600;
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+// const url = require('url');
+// const querystring = require('querystring');
 
 const app = express();
 app.use(cors())
@@ -20,11 +22,13 @@ const registerController = require('./controllers/register_controller');
 const propertyController = require('./controllers/property_controller');
 const resourcesController = require('./controllers/resources_controller');
 const loginController = require('./controllers/login_controller');
+const fileController = require('./controllers/file_controller');
 
 app.use('/register', registerController);
 app.use('/properties', propertyController);
 app.use('/resources', resourcesController);
 app.use('/login', loginController);
+app.use('/file', fileController);
 app.use('/', homeController);
 
 app.get('/', (req, res)=>{

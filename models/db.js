@@ -10,7 +10,7 @@ mongoose.connect(liveDB, {useNewUrlParser: true,  useUnifiedTopology: true})
     console.log('Db now connected');
 })
 .catch(err => {
-    console.log('connection Failed');
+    console.log('db connection Failed');
 })
 
 require('./user.model');
