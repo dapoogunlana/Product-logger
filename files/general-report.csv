@@ -1,0 +1,39 @@
+INFLOW,
+Sector,Amount (N)
+Federal Government Revenue (Jan 2020),"938,720,000,000"
+International Development agency,"23,800,000,000"
+Banking,"11,800,000,000"
+International NGOs,"11,700,000,000"
+Manufacturing,"5,000,000,000"
+Other sectors,"3,543,000,000"
+Local NGOs,"2,550,000,000"
+International companies,"1,970,000,000"
+Insurance,"1,000,000,000"
+Oil and gas,"1,000,000,000"
+Individuals,"31,000,000"
+Total,"938,720,000,000"
+,
+BUDGET UTILIZATION,
+Sector,Amount(N)
+CBN Stimulus Pakage,"500,000,000,000"
+Sum of Health emergency funds,"10,984,000,000"
+Fund for improving Health care Facilities,"9,620,000,000"
+Total,"520,604,000,000"
+,
+INFLOW & BUDGET UTILIZATION,
+Federal Government Revenue (Jan 2020),"938,720,000,000"
+International Development agency,"23,800,000,000"
+Banking,"11,800,000,000"
+International NGOs,"11,700,000,000"
+Manufacturing,"5,000,000,000"
+Other sectors,"3,543,000,000"
+Local NGOs,"2,550,000,000"
+International companies,"1,970,000,000"
+Insurance,"1,000,000,000"
+Oil and gas,"1,000,000,000"
+Individuals,"31,000,000"
+,
+CBN Stimulus Pakage,"-500,000,000,000"
+Sum of Health emergency funds,"-10,984,000,000"
+Fund for improving Health care Facilities,"-9,620,000,000"
+Surplus,"480,510,000,000"
